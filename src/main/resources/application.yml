@@ -1,0 +1,28 @@
+server:
+  port: 80
+spring:
+  datasource:
+    url: jdbc:mysql://rm-uf6241200br318734ro.mysql.rds.aliyuncs.com:3306/lr_hoo?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: xFO3NT2zkh3bYPbXgwJv7ztAM
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  devtools:
+    restart:
+      enabled: true  #设置开启热部署
+      additional-paths: src/main/java #重启目录
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false    #页面不加载缓存，修改即时生效
+mybatis-plus:
+  mapper-locations: classpath:/com/rickish/mapper/xml/*Mapper.xml
+
+redis:
+  host: 127.0.0.1
+  port: 6379
+  #password:
+  lettuce:
+    pool:
+      max-active: 10
+      max-idle: 10
+      min-idle: 1
+      time-between-eviction-runs: 10s

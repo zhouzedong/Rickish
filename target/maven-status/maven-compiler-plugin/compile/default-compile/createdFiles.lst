@@ -1,0 +1,13 @@
+com\rickish\utils\GetVacation.class
+com\rickish\entity\dto\LeaveTypeDto.class
+com\rickish\service\impl\VacationServiceImpl.class
+com\rickish\Common\ResultCode.class
+com\rickish\RickishApplication.class
+com\rickish\entity\dto\VacationDto.class
+com\rickish\controller\VacationController.class
+com\rickish\entity\Vacation.class
+com\rickish\mapper\VacationMapper.class
+com\rickish\service\VacationService.class
+com\rickish\Common\R.class
+com\rickish\GenerateTest.class
+com\rickish\controller\BookController.class

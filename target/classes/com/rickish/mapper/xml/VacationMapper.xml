@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rickish.mapper.VacationMapper">
+    <resultMap id="getAllVacationRM" type="com.rickish.entity.Vacation">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="datetxtStart" column="datetxt_start"/>
+        <result property="datetxtDuring" column="datetxt_during"/>
+        <result property="datetxtEnd" column="datetxt_end"/>
+        <result property="holiday" column="holiday"/>
+        <result property="isrevise" column="isrevise"/>
+        <result property="revise1" column="revise1"/>
+        <result property="revise2" column="revise2"/>
+        <result property="revise3" column="revise3"/>
+        <result property="revise4" column="revise4"/>
+        <result property="updatetime" column="updatetime"/>
+        <result property="vacaDate" column="vaca_date"/>
+    </resultMap>
+    <select id="getAllVacation" resultMap="getAllVacationRM" parameterType="string">
+        select DATEDIFF(t0.vaca_date, #{todaydate}) as DiffDate ,t1.*
+        from vacation t0
+        inner join vacation t1 on t1.id=t0.id
+        where t0.datetxt_end >= #{todaydate}
+        order by DiffDate asc ;
+    </select>
+
+</mapper>
